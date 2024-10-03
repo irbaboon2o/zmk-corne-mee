@@ -40,19 +40,20 @@
 
         Lower {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  SS  |  7  |  8  |  9  |  %  |   |  ^  |  &  |  (  |  )  |  )  | BKSP |
-            // | CTRL |  .   |  4  |  5  |  6  |     |   |  -  |  =  |  {  |  }  |  \  |  `   |
-            // | SHFT |  /   |  1  |  2  |  3  |     |   |  _  |  +  |  [  |  ]  | "|" |  ~   |
-            //                     | GUI |     | SPC |   | ENT |     | ALT |
+            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  &  |  (  |  {  |  [  |  |  | BKSP |
+            // | CTRL |     |     |     |     |     |   |  +  |  )  |  }  |  ]  |  \  |  /   |
+            // | SHFT |     |     |     |     |     |   |  =  |  +  |  ;  |  ,  | . |  *   |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-            label = "Lower";
+ label = "Lower";
             bindings = <
-&kp LA(TAB)  &kp LS(LG(S))  &kp N7  &kp N8    &kp N9  &kp N0       &kp CARET  &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RPAR  &kp DELETE
-&kp LCTRL    &kp PERIOD     &kp N4  &kp N5    &kp N6  &kp MINUS    &kp MINUS  &kp EQUAL  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BSLH  &kp MINUS
-&kp LSHFT    &kp SLASH      &kp N1  &kp N2    &kp N3  &kp PLUS     &kp UNDER  &kp PLUS   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PIPE  &kp TILDE
-                                    &kp LGUI  &trans  &trans       &trans     &trans     &kp RALT
+&kp LA(TAB)  &kp LS(LG(S))  &kp N7  &kp N8    &kp N9  &kp N0       &kp AMPERSAND  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp PIPE           &kp DELETE
+&kp LCTRL    &kp PERIOD     &kp N4  &kp N5    &kp N6  &kp MINUS    &kp PLUS       &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_BRACKET  &kp SLASH
+&kp LSHFT    &kp SLASH      &kp N1  &kp N2    &kp N3  &kp PLUS     &kp EQUAL      &kp PLUS               &kp SEMICOLON    &kp COMMA          &kp PERIOD         &kp ASTERISK
+                                    &kp LGUI  &trans  &trans       &trans         &trans                 &kp RALT
             >;
         };
+
 
         Raise {
             // -----------------------------------------------------------------------------------------
