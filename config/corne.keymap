@@ -17,7 +17,16 @@
             bindings = <&kp LS(LG(LEFT))>;
             label = "SHIFT_SCREEN_L";
         };
+
+        system_println: system_println {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(S) &kp Y &kp S &kp T &kp E &kp M &kp DOT &kp O &kp U &kp T &kp DOT &kp P &kp R &kp I &kp N &kp T &kp L &kp N &kp LPAR &kp DQT>;
+            label = "SYSTEM_PRINTLN";
+        };
     };
+
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -45,15 +54,14 @@
             // | SHFT |     |     |     |     |     |   |  =  |  +  |  ;  |  ,  | . |  *   |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
- label = "Lower";
+            label = "Lower";
             bindings = <
-&kp LA(TAB)  &kp LS(LG(S))  &kp N7  &kp N8    &kp N9  &kp N0       &kp AMPERSAND  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp PIPE           &kp DELETE
-&kp LCTRL    &kp PERIOD     &kp N4  &kp N5    &kp N6  &kp MINUS    &kp PLUS       &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_BRACKET  &kp SLASH
-&kp LSHFT    &kp SLASH      &kp N1  &kp N2    &kp N3  &kp PLUS     &kp EQUAL      &kp PLUS               &kp SEMICOLON    &kp COMMA          &kp PERIOD         &kp ASTERISK
+&kp LA(TAB)  &kp LS(LG(S))  &kp N7  &kp N8    &kp N9  &kp N0       &kp AMPERSAND  &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp DELETE
+&kp LCTRL    &kp PERIOD     &kp N4  &kp N5    &kp N6  &kp MINUS    &kp PLUS       &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp RIGHT_BRACKET  &kp SLASH      &kp SLASH
+&kp LSHFT    &kp SLASH      &kp N1  &kp N2    &kp N3  &kp PLUS     &kp EQUAL      &kp PLUS               &kp SEMICOLON     &kp COMMA          &kp PERIOD     &kp ASTERISK
                                     &kp LGUI  &trans  &trans       &trans         &trans                 &kp RALT
             >;
         };
-
 
         Raise {
             // -----------------------------------------------------------------------------------------
@@ -64,10 +72,10 @@
 
             label = "Raise";
             bindings = <
-&kp LS(LG(LEFT_ARROW))  &kp N1        &kp N2  &kp N3     &kp N4  &kp N5    &kp N6              &kp HOME  &kp UP_ARROW  &kp END    &kp N0         &kp LS(LG(RIGHT))
-&kp LCTRL               &kp NUMBER_6  &kp N7  &kp N8     &kp N9  &kp N0    &kp LA(LEFT_ARROW)  &kp LEFT  &kp DOWN      &kp RIGHT  &kp RA(RIGHT)  &kp DEL
-&kp LSHFT               &trans        &trans  &trans     &trans  &trans    &trans              &trans    &kp F5        &trans     &trans         &trans
-                                              &kp LCTRL  &trans  &trans    &trans              &trans    &kp RALT
+&shift_screen_l  &kp N1        &kp N2  &kp N3     &kp N4  &kp N5    &kp N6              &kp HOME  &kp UP_ARROW  &kp END    &kp N0         &shift_screen_r
+&kp LCTRL        &kp NUMBER_6  &kp N7  &kp N8     &kp N9  &kp N0    &kp LA(LEFT_ARROW)  &kp LEFT  &kp DOWN      &kp RIGHT  &kp RA(RIGHT)  &kp DEL
+&kp LSHFT        &trans        &trans  &trans     &trans  &trans    &system_println     &trans    &kp F5        &trans     &trans         &trans
+                                       &kp LCTRL  &trans  &trans    &trans              &trans    &kp RALT
             >;
         };
 
